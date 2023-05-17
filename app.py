@@ -10,6 +10,7 @@ def index():
 @app.route('/', methods=['POST'])
 def upload():
     img = request.get_json()['image']
+    print(img)
     image_data = base64.b64decode(img)
     with open("image.jpeg", "wb") as file:
         file.write(image_data)
